@@ -27,8 +27,6 @@ code snippet for Xml processor that can process xml into model using generics or
         [XmlElement] public string property2 { get; set; }
     }
 ```
-==========================================================================================================================================================
-  
   2. takes xml and process to JsonResult
 ```csharp
 

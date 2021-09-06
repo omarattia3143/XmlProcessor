@@ -2,7 +2,7 @@
 code snippet for Xml processor that can process xml into model using generics or JsonResult
 
 1. takes any class (model) and deserialize xml to that given class
-   ```csharp
+```csharp
 
  private static async Task<T> ProcessResponseTo<T>(HttpResponseMessage httpResponseMessage)
         {
@@ -16,9 +16,9 @@ code snippet for Xml processor that can process xml into model using generics or
             using TextReader reader = new StringReader(stream);
             return (T) serializer.Deserialize(reader);
         }
-  ```
+```
   and here an example for model to be used:
-    ```csharp
+```csharp
  
   [XmlRoot("Response")] //the name of the root xml node
     public class SendSmsRes
@@ -26,11 +26,11 @@ code snippet for Xml processor that can process xml into model using generics or
         [XmlElement] public int property1 { get; set; }
         [XmlElement] public string property2 { get; set; }
     }
-  ```
+```
 ==========================================================================================================================================================
   
   2. takes xml and process to JsonResult
-    ```csharp
+```csharp
 
    private static async Task<JsonResult> ProcessResponseToJsonWrapper<T>(HttpResponseMessage httpResponseMessage)
         {
